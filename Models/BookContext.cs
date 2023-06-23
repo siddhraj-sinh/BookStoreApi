@@ -9,6 +9,12 @@ namespace BookStoreApi.Models
           : base(options)
         {
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            
+            modelBuilder.Entity<BookItem>().ToTable("BookItem");
+
+        }
 
         public DbSet<BookItem> BookItems { get; set; } = null!;
     }
